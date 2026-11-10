@@ -24,17 +24,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Capacitor Android Platform
-        run: npm install @capacitor/android
-
-      - name: Override buggy tar package
-        run: npm install tar@6.2.1 --save-exact
+      - name: Install Capacitor CLI and Android
+        run: npm install @capacitor/cli @capacitor/android
 
       - name: Add Android platform
-        run: npx cap add android
+        run: npx @capacitor/cli add android
 
       - name: Sync web code
-        run: npx cap sync android
+        run: npx @capacitor/cli sync android
 
       - name: Make gradlew executable
         run: chmod +x ./android/gradlew
