@@ -15,6 +15,15 @@ jobs:
         with:
           node-version: 20
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'   # Use '21' if you are using Capacitor 7 or newer
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Install dependencies
         run: npm install
 
@@ -23,6 +32,9 @@ jobs:
 
       - name: Sync web code
         run: npx cap sync android
+
+      - name: Make gradlew executable
+        run: chmod +x ./android/gradlew
 
       - name: Build APK
         working-directory: ./android
