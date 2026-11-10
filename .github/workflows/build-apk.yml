@@ -24,6 +24,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Capacitor Android Platform
+        run: npm install @capacitor/android
+
+      - name: Override buggy tar package
+        run: npm install tar@6.2.1 --save-exact
+
       - name: Add Android platform
         run: npx cap add android
 
