@@ -30,6 +30,9 @@ jobs:
       - name: Add Android platform
         run: npx @capacitor/cli add android
 
+      - name: Ensure Capacitor assets directory exists
+        run: mkdir -p android/app/src/main/assets
+
       - name: Sync web code
         run: npx @capacitor/cli sync android
 
