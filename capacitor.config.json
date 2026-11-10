@@ -1,0 +1,9 @@
+{
+  "appId": "com.emmanuelnixon.myneonapp",
+  "appName": "My Neon App",
+  "webDir": "out",
+  "server": {
+    "url": "https://my-neon-app-production.up.railway.app",
+    "cleartext": true
+  }
+}
